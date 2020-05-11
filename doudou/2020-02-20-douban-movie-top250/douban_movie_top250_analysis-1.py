@@ -5,7 +5,7 @@ import pandas as pd
 file = './doubanTop250.txt'
 content = []
 
-with open(file) as f:
+with open(file,'r',encoding='utf-8') as f:
     line = f.readline()
     while line:
         line = eval(line)

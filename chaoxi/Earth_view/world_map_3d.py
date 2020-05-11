@@ -6,7 +6,7 @@ from pyecharts.faker import POPULATION
 data = [x for _, x in POPULATION[1:]]
 low, high = min(data), max(data)
 c = (
-    MapGlobe(init_opts=opts.InitOpts(width='1000px', height='1000px',bg_color='#00BBFF'))#
+    MapGlobe(init_opts=opts.InitOpts(width='1800px', height='960px',bg_color='#00BBFF'))#
     .add_schema()
     .add(
         maptype="world",

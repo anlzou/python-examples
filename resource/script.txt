@@ -1,0 +1,2 @@
+<script type="text/javascript" src="../../resource/js/echarts.min.js"></script>
+<script type="text/javascript" src="../../resource/js/echarts-gl.min.js"></script>
