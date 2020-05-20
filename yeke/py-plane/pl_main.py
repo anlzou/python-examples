@@ -1,4 +1,5 @@
-import pygame, random
+import pygame
+import random
 from sys import exit
 from pygame.locals import *
 from pl_model import *
@@ -49,10 +50,14 @@ enemy_rect = pygame.Rect(534, 612, 57, 43)
 enemy_img = img_plane.subsurface(enemy_rect)
 # 设置敌人被击图片
 enemy_explosion_imgs = []
-enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(267, 347, 57, 43)))
-enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(873, 697, 57, 43)))
-enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(267, 296, 57, 43)))
-enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(930, 697, 57, 43)))
+enemy_explosion_imgs.append(
+    img_plane.subsurface(pygame.Rect(267, 347, 57, 43)))
+enemy_explosion_imgs.append(
+    img_plane.subsurface(pygame.Rect(873, 697, 57, 43)))
+enemy_explosion_imgs.append(
+    img_plane.subsurface(pygame.Rect(267, 296, 57, 43)))
+enemy_explosion_imgs.append(
+    img_plane.subsurface(pygame.Rect(930, 697, 57, 43)))
 # 设置敌机精灵组
 enemies = pygame.sprite.Group()
 # 设置敌机被击精灵组
@@ -110,7 +115,8 @@ while running:
             if enemy.rect.top < 0:
                 enemies.remove(enemy)
         # 设置敌机与玩家的飞机子弹相碰时，返回被击的敌机实例
-        enemy_explosion = pygame.sprite.groupcollide(enemies, player.bullets, 1, 1)
+        enemy_explosion = pygame.sprite.groupcollide(
+            enemies, player.bullets, 1, 1)
         for enemy in enemy_explosion:
             enemies_explosion.add(enemy)
     # 绘制屏幕
@@ -137,7 +143,8 @@ while running:
             score += 100
             continue
         # 敌机被击时显示图片
-        screen.blit(enemy.explosion_img[int(enemy.explosion_index / 2)], enemy.rect)
+        screen.blit(enemy.explosion_img[int(
+            enemy.explosion_index / 2)], enemy.rect)
         enemy.explosion_index += 1
     # 显示子弹
     player.bullets.draw(screen)
@@ -173,10 +180,14 @@ while running:
             enemy_rect = pygame.Rect(534, 612, 57, 43)
             enemy_img = img_plane.subsurface(enemy_rect)
             enemy_explosion_imgs = []
-            enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(267, 347, 57, 43)))
-            enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(873, 697, 57, 43)))
-            enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(267, 296, 57, 43)))
-            enemy_explosion_imgs.append(img_plane.subsurface(pygame.Rect(930, 697, 57, 43)))
+            enemy_explosion_imgs.append(
+                img_plane.subsurface(pygame.Rect(267, 347, 57, 43)))
+            enemy_explosion_imgs.append(
+                img_plane.subsurface(pygame.Rect(873, 697, 57, 43)))
+            enemy_explosion_imgs.append(
+                img_plane.subsurface(pygame.Rect(267, 296, 57, 43)))
+            enemy_explosion_imgs.append(
+                img_plane.subsurface(pygame.Rect(930, 697, 57, 43)))
             enemies = pygame.sprite.Group()
             enemies_explosion = pygame.sprite.Group()
             score = 0

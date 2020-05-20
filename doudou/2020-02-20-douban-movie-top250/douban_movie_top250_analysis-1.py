@@ -5,7 +5,7 @@ import pandas as pd
 file = './doubanTop250.txt'
 content = []
 
-with open(file,'r',encoding='utf-8') as f:
+with open(file, 'r', encoding='utf-8') as f:
     line = f.readline()
     while line:
         line = eval(line)
@@ -78,11 +78,13 @@ print('*' * 66)
 d['comments'] = d['comments'].str.split(' ').apply(pd.Series)[1]
 d['comments'] = d['comments'].astype(int)
 
-top10_comments_movie = d[['title', 'comments']].sort_values('comments', ascending=False).head(10).reset_index()
+top10_comments_movie = d[['title', 'comments']].sort_values(
+    'comments', ascending=False).head(10).reset_index()
 print(top10_comments_movie)
 
 print('*' * 66)
 
 d['votes'] = d['votes'].astype(int)
-top10_votes_movie = d[['title', 'votes']].sort_values('votes', ascending=False).head(10).reset_index()
+top10_votes_movie = d[['title', 'votes']].sort_values(
+    'votes', ascending=False).head(10).reset_index()
 print(top10_votes_movie)
